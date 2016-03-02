@@ -42,7 +42,7 @@ lr.on('line', function (line) {
 
   sem3.products.offers_field( "sem3_id", line.sem3_id.toString() );
 
-  sem3.products.get_offers(/*endpoint, jsonStr , method,*/
+  sem3.products.get_offers(
 
 
     function(err, offers) {

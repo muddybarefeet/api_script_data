@@ -31,14 +31,16 @@ outputFile.on('error', function(err) {
 
 
 var getData = function (err, products) {
-  console.log('COUNT', count);
+  // console.log('COUNT', count);
   if (err) {
      console.log("Couldn't execute request: iterate_products");
      return;
   }
 
+
   var filteredByDate = JSON.parse(products).results.filter(function (product) {
     //filter for the products updates between Aug 1st and Aug 31st 2015
+    console.log( 'new date on this data', moment(new Date(product.updated_at * 1000)).format('MM/DD/YYYY') );
     if (moment(new Date(product.updated_at * 1000)).isBetween(startDateFilterFrom, endDateFilterFrom)) {
       return product;
     }
@@ -63,7 +65,7 @@ var getData = function (err, products) {
 
   }
 
-  if (count < 1000) {//------------>?! QUERY
+  if (count < 1000) { 
 
     sem3.products.iterate_products(getData);
 
