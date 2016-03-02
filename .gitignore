@@ -1,5 +1,6 @@
 node_modules/*
 keys.js
+abercrombieData
 abercrombieData.formatted
 abercrombieData.formatted.priced
-notes.md
+abercrombieData.formatted.priced.sku

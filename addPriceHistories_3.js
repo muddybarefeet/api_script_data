@@ -21,13 +21,11 @@ outputFile.on('error', function(err) {
   console.log('error in writing file', err);
 });
 
-
 //variable to be used when inserting comas between objects in the outputFile
 var separator = "";
 
 //to insert into the outputFile so that the data converted to csv is in a friendly format
 outputFile.write("[");
-
 
 lr.on('error', function (err) {
   console.log('error in line by line module', err);
@@ -42,8 +40,8 @@ lr.on('line', function (line) {
 
   sem3.products.offers_field( "sem3_id", line.sem3_id.toString() );
 
+  //query the offers endpont for the price history data of each product searching by the product id
   sem3.products.get_offers(
-
 
     function(err, offers) {
 
@@ -53,6 +51,13 @@ lr.on('line', function (line) {
       }
 
       //take the data from the api and add to the current object
+
+      //if want the SKU with each price for the date
+      // JSON.parse(offers).results.forEach(function (price) {
+      //   var dateSku = "SKU and offer price for " + moment(new Date(price.lastrecorded_at * 1000)).format('L');
+      //   line[dateSku] = price.sku + '    ' + price.price;
+      // });
+
       JSON.parse(offers).results.forEach(function (price) {
         var date = moment(new Date(price.lastrecorded_at * 1000)).format('L');
         line[date] = price.price;
@@ -83,5 +88,5 @@ lr.on('end', function () {
 
 
 /*
-node addPriceHistories_2.js /Users/anna/Desktop/sem3Project_abercrombie/abercrombieData.formatted /Users/anna/Desktop/sem3Project_abercrombie/abercrombieData.formatted.priced
+node addPriceHistories_3.js /Users/anna/Desktop/sem3Project_abercrombie/abercrombieData.formatted /Users/anna/Desktop/sem3Project_abercrombie/abercrombieData.formatted.priced.sku
 */
