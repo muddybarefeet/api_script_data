@@ -1,11 +1,15 @@
 
 The Brief:
 
-*First 1000 products (product name and product category) offered between August 1 - August 31, 2015
-*Historical pricing / all prices that have been recorded for the products and the date recorded for those
-*id's
-*only have the active products
-*url of the product
+* First 1000 products (product name and product category) offered between August 1 - August 31, 2015
+
+* Historical pricing / all prices that have been recorded for the products and the date recorded for those
+
+* id's
+
+* only have the active products
+
+* url of the product
 
 To run:
 

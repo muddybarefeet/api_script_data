@@ -8,12 +8,12 @@
 // description 
 // image url - one only currently
 // timestamp (updated_at) could also do created_at?
-// specifications fields (color, size, etc, in individual columns) here so far: brand color size Could add the features fields?
+// specifications fields (color, size, etc, in individual columns) here so far: brand color size. Could add the features fields?
 
 // ------------------------------------------ upc ?
 // ------------------------------------------ sku found per offer so does it want to be add to each historical price?
-// ------------------------------------------ crumb ?
-// ------------------------------------------ offer url - ?
+// ------------------------------------------ crumb ? Is this to do with breadcrumbing
+// ------------------------------------------ offer url : calvin suggests that this is not relevant for this search?
 
 //modules used
 var moment = require('moment');
